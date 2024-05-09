@@ -16,10 +16,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonEntrar.setOnClickListener {
-            val username = binding.editUsername.text.toString().trim()
-            val password = binding.editPassword.text.toString().trim()
+            val username = "João"
+            val password = "15"
 
-            if (username.equals("abc") && password.equals("123")) {
+            if (username.equals("João") && password.equals("15")) {
                 val i = Intent(this, MainActivity::class.java)
                 i.putExtra("username", username)
                 startActivity(i)
