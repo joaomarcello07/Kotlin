@@ -16,17 +16,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-
+// Obtém o nome de usuário da intent (se existir)
         val username = intent.extras?.getString("username")
 
+// Exibe uma saudação personalizada com o nome de usuário
         if(!username.isNullOrEmpty()){
             binding.textOla.setText("Olá $username")
         }
 
+// Configura o botão "Fechar" para encerrar a atividade
         binding.buttonFechar.setOnClickListener {
             finishAffinity()
         }
 
+// Configura o botão "Pedir" para iniciar a atividade SplashActivity com dados extras
         binding.buttonPedir.setOnClickListener {
             val i = Intent(this, SplashActivity::class.java)
             i.putExtra("quantidadePizza", binding.editQuantidadePizza.text.toString())
@@ -37,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+// Configura o checkbox "Pizza" para atualizar a quantidade e visibilidade do preço
         binding.checkPizza.setOnClickListener {
             if(binding.checkPizza.isChecked()){
                 binding.editQuantidadePizza.setText("1")
@@ -47,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+// Configura o checkbox "Salada" para atualizar a quantidade e visibilidade do preço
         binding.checkSalada.setOnClickListener {
             if(binding.checkSalada.isChecked()){
                 binding.editQuantidadeSalada.setText("1")
@@ -57,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+// Configura o checkbox "Hamburguer" para atualizar a quantidade e visibilidade do preço
         binding.checkHamburger.setOnClickListener {
             if(binding.checkHamburger.isChecked()){
                 binding.editQuantidadeHamburguer.setText("1")
